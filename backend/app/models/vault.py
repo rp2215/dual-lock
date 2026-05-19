@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, LargeBinary, DateTime
 from sqlalchemy.sql import func
 from app.database import Base
 
-# class mapping to database table
+# class mapping to vault_entries table
 class VaultEntry(Base):
 
     __tablename__ = "vault_entries" 

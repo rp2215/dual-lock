@@ -12,3 +12,12 @@
 - run `alembic revision --autogenerate -m "message"` which generates migration script
 - run `alembic upgrade head` which applies the sript to database
 - basically works like git but for the database schema
+
+### Using Database
+
+- install docker
+- be in venv using requirements.txt
+- create a .env file inside backend folder with Database url
+- run `docker compose up -d` to start database
+- `docker compose down` to stop database
+- go into backend folder and run `alembic upgrade head` to apply migrations
