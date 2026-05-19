@@ -1,0 +1,4 @@
+"""
+handles credential entries
+
+"""
