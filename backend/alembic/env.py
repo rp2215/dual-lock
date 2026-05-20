@@ -19,7 +19,7 @@ if config.config_file_name is not None:
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 from app.database import Base, DATABASE_URL
-from app.models import vault
+from backend.app.models import vault_entries
 
 target_metadata = Base.metadata
 

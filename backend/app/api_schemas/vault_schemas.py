@@ -28,4 +28,4 @@ class VaultEntryResponse(BaseModel):
     created_at: datetime
     updated_at: datetime | None = None
 
-    model_config = {"from_attributes": True} # tells Pydantic its allowed to read data directly from model objects
+    model_config = {"froum_attribtes": True} # tells Pydantic its allowed to read data directly from model objects
