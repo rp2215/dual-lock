@@ -17,40 +17,55 @@ export default function Login() {
     }
 
   return (
-    <div>
 
-      <h1>Login</h1>
+    // center everything
+    <div className="min-h-screen flex items-center justify-center">
 
-      {/* run validation with handleSubmit then call onSubmit if no errors*/}
-      <form onSubmit={handleSubmit(onSubmit)}>
+        {/* white card */}
+        <div className="bg-white rounded-2xl shadow-md p-10 w-full max-w-md">
 
-        <input
+            <h1 className="text-3xl font-bold text-center">Login</h1>
+            <p className="text-center">Enter your details to sign into account</p>
 
-          type="email"
-          placeholder="Email"
-          {...register('email', { required: 'Email is required' })}
+            {/* run validation with handleSubmit then call onSubmit if no errors*/}
+            <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4'>
 
-        />
+                <input
 
-        {/* only shows if the email field has a validation error */}
-        {errors.email && <p>{errors.email.message}</p>}
+                    type="email"
+                    placeholder="Enter your username/email"
+                    className="border rounded px-3 py-2"
+                    {...register('email', { required: 'Email is required' })}
 
-        <input
+                />
 
-          type="password"
-          placeholder="Password"
-          {...register('password', { required: 'Password is required' })}
+                {/* only shows if the email field has a validation error */}
+                {errors.email && <p>{errors.email.message}</p>}
 
-        />
+                <input
 
-        {/* only shows if the password field has a validation error */}
-        {errors.password && <p>{errors.password.message}</p>}
+                type="password"
+                placeholder="Password"
+                className="border rounded px-3 py-2"
+                {...register('password', { required: 'Password is required' })}
 
-        <button type="submit">Login</button>
+                />
 
-      </form>
+                {/* only shows if the password field has a validation error */}
+                {errors.password && <p>{errors.password.message}</p>}
 
-      <button onClick={() => navigate('/')}>Back</button>
+                <button type="submit" className="bg-black text-white rounded py-2">Login</button>
+
+            </form>
+
+            <p className="text-center text-sm">
+
+                No account? {''}
+                <span onClick={() => navigate('/signup')} className="underline cursour-pointers">Sign Up</span>
+            </p>
+
+        </div>
     </div>
+    
   )
 }
